@@ -46,7 +46,6 @@ def create_directories(path_to_directories: list, verbose=True):
         if verbose:
             logger.info(f"Created Directory at: {path}")
 
-
 @ensure_annotations
 def save_json(path: Path, data: dict):
     """save json data
@@ -59,7 +58,6 @@ def save_json(path: Path, data: dict):
         json.dump(data, f, indent=4)
 
     logger.info(f"json file saved at: {path}")
-
 
 @ensure_annotations
 def load_json(path: Path) -> ConfigBox:
@@ -77,7 +75,6 @@ def load_json(path: Path) -> ConfigBox:
     logger.info(f"json file loaded succesfully from: {path}")
     return ConfigBox(content)
 
-
 @ensure_annotations
 def save_bin(data: Any, path: Path):
     """save binary file
@@ -88,7 +85,6 @@ def save_bin(data: Any, path: Path):
     """
     joblib.dump(value=data, filename=path)
     logger.info(f"binary file saved at: {path}")
-
 
 @ensure_annotations
 def load_bin(path: Path) -> Any:
